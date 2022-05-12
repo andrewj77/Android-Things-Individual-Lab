@@ -9,7 +9,6 @@ namespace CatToyTestApp
 {
     public class CameraTest
     {
-        // Singleton initialized lazily. Reference once in your application.
         MMALCamera cam = MMALCamera.Instance;
 
         public async Task TakePicture()
@@ -19,8 +18,7 @@ namespace CatToyTestApp
                 await cam.TakePicture(imgCaptureHandler, MMALEncoding.JPEG, MMALEncoding.I420);
             }
 
-            // Cleanup disposes all unmanaged resources and unloads Broadcom library. To be called when no more processing is to be done
-            // on the camera.
+     
             cam.Cleanup();
         }
 
@@ -33,8 +31,7 @@ namespace CatToyTestApp
                 await cam.TakeVideo(vidCaptureHandler, cts.Token);
             }
 
-            // Cleanup disposes all unmanaged resources and unloads Broadcom library. To be called when no more processing is to be done
-            // on the camera.
+           
             cam.Cleanup();
         }
     }
